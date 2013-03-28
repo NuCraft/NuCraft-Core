@@ -80,6 +80,8 @@ public class NuCraftCore {
                 // Stub Method
         }
         
+        //Harro!
+        
         public static void addNames(){
         	LanguageRegistry.addName(copperOre, "Copper Ore");
         	LanguageRegistry.addName(unobtainiumOre, "Unobtainium Ore");
