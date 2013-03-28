@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 public class Silicate extends Item
 {
 
+
 public Silicate(int id)
 {
          super(id);
@@ -14,9 +15,9 @@ public Silicate(int id)
 }
 
 @Override
-public void func_94581_a(IconRegister iconRegister)
+public void updateIcons(IconRegister iconRegister)
 {
-         iconIndex = iconRegister.func_94245_a("nucraft:silicate");
+         iconIndex = iconRegister.registerIcon("nucraft:silicate");
 }
 
 }
