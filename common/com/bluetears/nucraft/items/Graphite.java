@@ -4,11 +4,11 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class Silicate extends Item
+public class Graphite extends Item
 {
 
 
-public Silicate(int id)
+public Graphite(int id)
 {
          super(id);
          setCreativeTab(CreativeTabs.tabMisc);
@@ -18,7 +18,7 @@ public Silicate(int id)
 @Override
 public void updateIcons(IconRegister iconRegister)
 {
-         iconIndex = iconRegister.registerIcon("nucraft:silicate");
+         iconIndex = iconRegister.registerIcon("nucraft:graphite");
 }
 
 }

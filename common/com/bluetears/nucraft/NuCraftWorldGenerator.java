@@ -28,12 +28,12 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
 	
 	private void generateEnd(World world, Random random, int chunkX, int chunkZ) {
 		
-		for(int k = 0; k < 10; k++){
+		for(int k = 0; k < 2; k++){
         	int firstBlockXCoord = chunkX + random.nextInt(16);
         	int firstBlockYCoord = random.nextInt(64);
         	int firstBlockZCoord = chunkZ + random.nextInt(16);
         	
-        	(new WorldGenMinable(NuCraftCore.unobtainiumOre.blockID, 13)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+        	(new NuCraftEndGenerator(NuCraftCore.oreUnobtainium.blockID, 2)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
         }
 		
 	}
@@ -45,7 +45,7 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
         	int firstBlockYCoord = random.nextInt(64);
         	int firstBlockZCoord = chunkZ + random.nextInt(16);
         	
-        	(new WorldGenMinable(NuCraftCore.silicateOre.blockID, 3)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+        	(new WorldGenMinable(NuCraftCore.oreSilicate.blockID, 3)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
         }
 		
 		
@@ -54,7 +54,7 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
         	int firstBlockYCoord = random.nextInt(64);
         	int firstBlockZCoord = chunkZ + random.nextInt(16);
         	
-        	(new WorldGenMinable(NuCraftCore.copperOre.blockID, 7)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+        	(new WorldGenMinable(NuCraftCore.oreCopper.blockID, 7)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
         }
         
 	}
