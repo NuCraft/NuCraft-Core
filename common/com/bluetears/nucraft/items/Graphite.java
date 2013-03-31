@@ -13,6 +13,7 @@ public Graphite(int id)
          super(id);
          setCreativeTab(CreativeTabs.tabMisc);
          setMaxStackSize(64);
+         setUnlocalizedName("graphite");
 }
 
 @Override

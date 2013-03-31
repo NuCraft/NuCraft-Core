@@ -13,6 +13,7 @@ public Quartz(int id)
          super(id);
          setCreativeTab(CreativeTabs.tabMisc);
          setMaxStackSize(64);
+         setUnlocalizedName("quartz");
 }
 
 @Override

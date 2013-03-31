@@ -3,7 +3,7 @@ package com.bluetears.nucraft;
 
 
 
-import com.bluetears.nucraft.blocks.CopperOre;
+
 import com.bluetears.nucraft.blocks.OreAluminium;
 import com.bluetears.nucraft.blocks.OreBauxite;
 import com.bluetears.nucraft.blocks.OreFafnium;
@@ -13,8 +13,6 @@ import com.bluetears.nucraft.blocks.OreLead;
 import com.bluetears.nucraft.blocks.OreOnyxstone;
 import com.bluetears.nucraft.blocks.OreQuartz;
 import com.bluetears.nucraft.blocks.OreSilicate;
-import com.bluetears.nucraft.blocks.SilicateOre;
-import com.bluetears.nucraft.blocks.UnobtainiumOre;
 import com.bluetears.nucraft.items.Graphite;
 import com.bluetears.nucraft.items.Quartz;
 import com.bluetears.nucraft.items.Silicate;
@@ -64,6 +62,10 @@ public class NuCraftCore {
         
         public void load(FMLInitializationEvent event) {
         	
+        	createBlocks();
+        	createItems();
+        	registerBlocks();
+        	setHarvestLevel();
         	addNames();
             
             GameRegistry.registerWorldGenerator(new NuCraftWorldGenerator());
@@ -93,7 +95,7 @@ public class NuCraftCore {
         	GameRegistry.registerBlock(oreUnobtainium, "oreUnobtainium");
         }
         
-        public static void setHarvestLevels(){
+        public static void setHarvestLevel(){
         	MinecraftForge.setBlockHarvestLevel(oreAluminium, "pickaxe", 2);
         	MinecraftForge.setBlockHarvestLevel(oreBauxite, "pickaxe", 2);
         	MinecraftForge.setBlockHarvestLevel(oreCopper, "pickaxe", 2);
@@ -140,20 +142,20 @@ public class NuCraftCore {
         public static void addNames(){
         	
         	//Adding of names for the Blocks
-        	LanguageRegistry.addName(oreAluminium, "Copper Ore");
-        	LanguageRegistry.addName(oreBauxite, "Copper Ore");
+        	LanguageRegistry.addName(oreAluminium, "Aluminium Ore");
+        	LanguageRegistry.addName(oreBauxite, "Bauxite Ore");
         	LanguageRegistry.addName(oreCopper, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
-        	LanguageRegistry.addName(copperOre, "Copper Ore");
+        	LanguageRegistry.addName(oreFafnium, "Fafnium Ore");
+        	LanguageRegistry.addName(oreGraphite, "Graphite Ore");
+        	LanguageRegistry.addName(oreGuiltalium, "Guiltalium Ore");
+        	LanguageRegistry.addName(oreLead, "Lead Ore");
+        	LanguageRegistry.addName(oreOnyxstone, "Onyxstone Ore");
+        	LanguageRegistry.addName(oreQuartz, "Quartz Ore");
+        	LanguageRegistry.addName(oreSilicate, "Silicate Ore");
+        	LanguageRegistry.addName(oreSilver, "Silver Ore");
+        	LanguageRegistry.addName(oreSulfur, "Sulfur Ore");
+        	LanguageRegistry.addName(oreTin, "Tin Ore");
+        	LanguageRegistry.addName(oreUnobtainium, "Unobtainium Ore");
         	
         	
         	//Adding of Names for the Items
@@ -186,8 +188,8 @@ public class NuCraftCore {
         public static Block oreUnobtainium;
         
         //Extra Variables that "Drive" the mod
-        public static int startItemId;
-        public static int startBlockId;
+        public static int startItemId = 20000;
+        public static int startBlockId = 500;
    
         
 }

@@ -13,6 +13,7 @@ public Sulfur(int id)
          super(id);
          setCreativeTab(CreativeTabs.tabMisc);
          setMaxStackSize(64);
+         setUnlocalizedName("sulfur");
 }
 
 @Override
