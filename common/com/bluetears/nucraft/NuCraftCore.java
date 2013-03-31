@@ -6,6 +6,7 @@ package com.bluetears.nucraft;
 
 import com.bluetears.nucraft.blocks.OreAluminium;
 import com.bluetears.nucraft.blocks.OreBauxite;
+import com.bluetears.nucraft.blocks.OreCopper;
 import com.bluetears.nucraft.blocks.OreFafnium;
 import com.bluetears.nucraft.blocks.OreGraphite;
 import com.bluetears.nucraft.blocks.OreGuiltalium;
@@ -13,6 +14,10 @@ import com.bluetears.nucraft.blocks.OreLead;
 import com.bluetears.nucraft.blocks.OreOnyxstone;
 import com.bluetears.nucraft.blocks.OreQuartz;
 import com.bluetears.nucraft.blocks.OreSilicate;
+import com.bluetears.nucraft.blocks.OreSilver;
+import com.bluetears.nucraft.blocks.OreSulfur;
+import com.bluetears.nucraft.blocks.OreTin;
+import com.bluetears.nucraft.blocks.OreUnobtainium;
 import com.bluetears.nucraft.items.Graphite;
 import com.bluetears.nucraft.items.Quartz;
 import com.bluetears.nucraft.items.Silicate;
@@ -116,7 +121,7 @@ public class NuCraftCore {
         public static void createBlocks(){
         	oreAluminium = new OreAluminium(startBlockId, Material.iron);
         	oreBauxite = new OreBauxite(startBlockId+1, Material.iron);
-        	oreCopper = new OreAluminium(startBlockId+2, Material.iron);
+        	oreCopper = new OreCopper(startBlockId+2, Material.iron);
         	oreFafnium = new OreFafnium(startBlockId+3, Material.iron);
         	oreGraphite = new OreGraphite(startBlockId+4, Material.iron);
         	oreGuiltalium = new OreGuiltalium(startBlockId+5, Material.iron);
@@ -124,10 +129,10 @@ public class NuCraftCore {
         	oreOnyxstone = new OreOnyxstone(startBlockId+7, Material.iron);
         	oreQuartz = new OreQuartz(startBlockId+8, Material.iron);
         	oreSilicate = new OreSilicate(startBlockId+9, Material.iron);
-        	oreSilver = new OreAluminium(startBlockId+10, Material.iron);
-        	oreSulfur = new OreAluminium(startBlockId+11, Material.iron);
-        	oreTin = new OreAluminium(startBlockId+12, Material.iron);
-        	oreUnobtainium = new OreAluminium(startBlockId+13, Material.iron);
+        	oreSilver = new OreSilver(startBlockId+10, Material.iron);
+        	oreSulfur = new OreSulfur(startBlockId+11, Material.iron);
+        	oreTin = new OreTin(startBlockId+12, Material.iron);
+        	oreUnobtainium = new OreUnobtainium(startBlockId+13, Material.iron);
         }
         
         public static void createItems(){
