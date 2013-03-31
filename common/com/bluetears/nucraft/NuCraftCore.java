@@ -1,9 +1,5 @@
 package com.bluetears.nucraft;
 
-
-
-
-
 import com.bluetears.nucraft.blocks.OreAluminium;
 import com.bluetears.nucraft.blocks.OreBauxite;
 import com.bluetears.nucraft.blocks.OreCopper;
@@ -26,6 +22,7 @@ import com.bluetears.nucraft.items.Sulfur;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 
 
@@ -60,7 +57,31 @@ public class NuCraftCore {
         
         @PreInit
         public void preInit(FMLPreInitializationEvent event) {
-                // Stub Method
+               
+        	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+
+            config.load();
+
+            startBlockId = config.getBlock("Starting Block Id", 500).getInt();
+
+            startItemId = config.getItem("Starting Item Id", 20000).getInt();
+
+            // Since this flag is a boolean, we can read it into the variable directly from the config.
+            aluminiumFlag = config.get(Configuration.CATEGORY_GENERAL, "Aluminium Ore Generation Flag", false).getBoolean(false);
+            bauxiteFlag = config.get(Configuration.CATEGORY_GENERAL, "Bauxite Ore Generation Flag", false).getBoolean(false);
+            copperFlag = config.get(Configuration.CATEGORY_GENERAL, "Copper Ore Generation Flag", false).getBoolean(false);
+            leadFlag = config.get(Configuration.CATEGORY_GENERAL, "Lead Ore Generation Flag", false).getBoolean(false);
+            quartzFlag = config.get(Configuration.CATEGORY_GENERAL, "Quartz Ore Generation Flag", false).getBoolean(false);
+            silverFlag = config.get(Configuration.CATEGORY_GENERAL, "Silver Ore Generation Flag", false).getBoolean(false);
+            sulfurFlag = config.get(Configuration.CATEGORY_GENERAL, "Sulfur Ore Generation Flag", false).getBoolean(false);
+            tinFlag = config.get(Configuration.CATEGORY_GENERAL, "Tin Ore Generation Flag", false).getBoolean(false);
+            
+            
+
+
+
+            config.save();
+        	
         }
         
         @Init
@@ -73,7 +94,7 @@ public class NuCraftCore {
         	setHarvestLevel();
         	addNames();
             
-            GameRegistry.registerWorldGenerator(new NuCraftWorldGenerator());
+            GameRegistry.registerWorldGenerator(new NuCraftWorldGenerator(copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag,aluminiumFlag));
             
                 proxy.registerRenderers();
         }
@@ -195,6 +216,7 @@ public class NuCraftCore {
         //Extra Variables that "Drive" the mod
         public static int startItemId = 20000;
         public static int startBlockId = 500;
+        public static boolean copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag,aluminiumFlag;
    
         
 }
