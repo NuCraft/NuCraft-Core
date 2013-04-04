@@ -48,6 +48,16 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
         	(new NuCraftEndGenerator(NuCraftCore.oreUnobtainium.blockID, 2)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
         }
 		
+		if((Math.abs(chunkX)>=30)||(Math.abs(chunkZ)>=30)){
+			for(int k = 0; k < 2; k++){
+	        	int firstBlockXCoord = chunkX + random.nextInt(16);
+	        	int firstBlockYCoord = random.nextInt(32)+32;
+	        	int firstBlockZCoord = chunkZ + random.nextInt(16);
+	        	
+	        	(new NuCraftEndGenerator(NuCraftCore.oreUnobtainium.blockID, 4)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+	        }
+		}
+		
 	}
 
 	private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
