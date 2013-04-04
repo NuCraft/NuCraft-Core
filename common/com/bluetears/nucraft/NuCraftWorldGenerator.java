@@ -9,9 +9,9 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 public class NuCraftWorldGenerator implements IWorldGenerator{
 	
-	public static boolean copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag,aluminiumFlag;
+	public static boolean copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag;
 	
-	NuCraftWorldGenerator(boolean copperFlag,boolean tinFlag,boolean leadFlag,boolean bauxiteFlag,boolean quartzFlag,boolean silverFlag,boolean sulfurFlag,boolean aluminiumFlag){
+	NuCraftWorldGenerator(boolean copperFlag,boolean tinFlag,boolean leadFlag,boolean bauxiteFlag,boolean quartzFlag,boolean silverFlag,boolean sulfurFlag){
 		this.copperFlag = copperFlag;
 		this.tinFlag = tinFlag;
 		this.leadFlag = leadFlag;
@@ -19,7 +19,6 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
 		this.quartzFlag = quartzFlag;
 		this.silverFlag = silverFlag;
 		this.sulfurFlag = sulfurFlag;
-		this.aluminiumFlag = aluminiumFlag;
 	}
 
 	@Override
@@ -83,15 +82,6 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
         }
 		}
 		
-		if (aluminiumFlag){
-			for(int k = 0; k < 3; k++){
-	        	int firstBlockXCoord = chunkX + random.nextInt(16);
-	        	int firstBlockYCoord = random.nextInt(32)+16;
-	        	int firstBlockZCoord = chunkZ + random.nextInt(16);
-	        	
-	        	(new WorldGenMinable(NuCraftCore.oreAluminium.blockID, 7)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
-	        }
-			}
 		
 		if (bauxiteFlag){
 			for(int k = 0; k < 4; k++){

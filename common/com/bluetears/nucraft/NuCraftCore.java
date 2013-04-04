@@ -1,6 +1,5 @@
 package com.bluetears.nucraft;
 
-import com.bluetears.nucraft.blocks.OreAluminium;
 import com.bluetears.nucraft.blocks.OreBauxite;
 import com.bluetears.nucraft.blocks.OreCopper;
 import com.bluetears.nucraft.blocks.OreFafnium;
@@ -66,8 +65,7 @@ public class NuCraftCore {
 
             startItemId = config.getItem("Starting Item Id", 20000).getInt();
 
-            // Since this flag is a boolean, we can read it into the variable directly from the config.
-            aluminiumFlag = config.get(Configuration.CATEGORY_GENERAL, "Aluminium Ore Generation Flag", false).getBoolean(false);
+            // Config file setup!
             bauxiteFlag = config.get(Configuration.CATEGORY_GENERAL, "Bauxite Ore Generation Flag", false).getBoolean(false);
             copperFlag = config.get(Configuration.CATEGORY_GENERAL, "Copper Ore Generation Flag", false).getBoolean(false);
             leadFlag = config.get(Configuration.CATEGORY_GENERAL, "Lead Ore Generation Flag", false).getBoolean(false);
@@ -94,7 +92,7 @@ public class NuCraftCore {
         	setHarvestLevel();
         	addNames();
             
-            GameRegistry.registerWorldGenerator(new NuCraftWorldGenerator(copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag,aluminiumFlag));
+            GameRegistry.registerWorldGenerator(new NuCraftWorldGenerator(copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag));
             
                 proxy.registerRenderers();
         }
@@ -105,7 +103,6 @@ public class NuCraftCore {
         }
         
         public static void registerBlocks(){
-        	GameRegistry.registerBlock(oreAluminium, "oreAluminium");
         	GameRegistry.registerBlock(oreBauxite, "oreBauxite");
         	GameRegistry.registerBlock(oreCopper, "oreCopper");
         	GameRegistry.registerBlock(oreFafnium, "oreFafnium");
@@ -122,7 +119,6 @@ public class NuCraftCore {
         }
         
         public static void setHarvestLevel(){
-        	MinecraftForge.setBlockHarvestLevel(oreAluminium, "pickaxe", 2);
         	MinecraftForge.setBlockHarvestLevel(oreBauxite, "pickaxe", 2);
         	MinecraftForge.setBlockHarvestLevel(oreCopper, "pickaxe", 2);
         	MinecraftForge.setBlockHarvestLevel(oreFafnium, "pickaxe", 2);
@@ -140,7 +136,6 @@ public class NuCraftCore {
         }
         
         public static void createBlocks(){
-        	oreAluminium = new OreAluminium(startBlockId, Material.iron);
         	oreBauxite = new OreBauxite(startBlockId+1, Material.iron);
         	oreCopper = new OreCopper(startBlockId+2, Material.iron);
         	oreFafnium = new OreFafnium(startBlockId+3, Material.iron);
@@ -168,7 +163,6 @@ public class NuCraftCore {
         public static void addNames(){
         	
         	//Adding of names for the Blocks
-        	LanguageRegistry.addName(oreAluminium, "Aluminium Ore");
         	LanguageRegistry.addName(oreBauxite, "Bauxite Ore");
         	LanguageRegistry.addName(oreCopper, "Copper Ore");
         	LanguageRegistry.addName(oreFafnium, "Fafnium Ore");
@@ -198,7 +192,6 @@ public class NuCraftCore {
         public static Item sulfur;
         
         //The following is for the creation for the block reservations
-        public static Block oreAluminium;
         public static Block oreBauxite;
         public static Block oreCopper;
         public static Block oreFafnium;
@@ -216,7 +209,7 @@ public class NuCraftCore {
         //Extra Variables that "Drive" the mod
         public static int startItemId = 20000;
         public static int startBlockId = 500;
-        public static boolean copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag,aluminiumFlag;
+        public static boolean copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag;
    
         
 }

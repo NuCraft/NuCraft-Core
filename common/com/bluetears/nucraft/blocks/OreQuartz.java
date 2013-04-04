@@ -29,4 +29,7 @@ public class OreQuartz extends Block {
         public int idDropped(int par1, Random random, int par2) {
             return NuCraftCore.quartz.itemID;
     }
-}
+        public int quantityDropped(Random par1Random){
+        	return par1Random.nextInt(2)+1;
+        }
+        }
