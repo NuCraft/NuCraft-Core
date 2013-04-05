@@ -15,15 +15,15 @@ public class DroppableOresMultiBlock extends Block {
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
-	@Override
-	public int getBlockTextureFromSideAndMetadata (int side, int metadata) {
-		return 16 + metadata;
-	}
+	//@Override
+	//public int getBlockTextureFromSideAndMetadata (int side, int metadata) {
+	//	return 16 + metadata;
+	//}
 	
-	@Override
-	public String getTextureFile () {
-		return CommonProxy.BLOCK_PNG;
-	}
+	//@Override
+	//public String getTextureFile () {
+	//	return CommonProxy.BLOCK_PNG;
+	//}
 	
 	@Override
 	public int damageDropped (int metadata) {

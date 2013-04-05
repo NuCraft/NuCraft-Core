@@ -119,7 +119,7 @@ public class NuCraftCore {
         	GameRegistry.registerBlock(oreSulfur, "oreSulfur");
         	GameRegistry.registerBlock(oreTin, "oreTin");
         	GameRegistry.registerBlock(oreUnobtainium, "oreUnobtainium");
-        	GameRegistry.registerBlock(droppableOresMultiBlock, DroppableOresItemBlock.class);
+        //	GameRegistry.registerBlock(droppableOresMultiBlock, DroppableOresItemBlock.class);
         }
         
         public static void setHarvestLevel(){
