@@ -23,6 +23,7 @@ import com.bluetears.nucraft.items.Sulfur;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -188,6 +189,11 @@ public class NuCraftCore {
         	LanguageRegistry.addName(quartz, "Quartz");
         	LanguageRegistry.addName(graphite, "Graphite");
         	LanguageRegistry.addName(sulfur, "Sulfur");
+        	
+        	for (int ix = 0; ix < 9; ix++) {
+    			ItemStack multiBlockStack = new ItemStack(droppableOresMultiBlock, 1, ix);
+    			LanguageRegistry.addName(multiBlockStack, droppableOresNames[multiBlockStack.getItemDamage()]);
+    		}
         }
    
         //The following is the creation for the item reservations
