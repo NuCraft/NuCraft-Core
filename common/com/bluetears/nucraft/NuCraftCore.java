@@ -1,5 +1,6 @@
 package com.bluetears.nucraft;
 
+import com.bluetears.nucraft.blocks.DroppableOresMultiBlock;
 import com.bluetears.nucraft.blocks.OreBauxite;
 import com.bluetears.nucraft.blocks.OreCopper;
 import com.bluetears.nucraft.blocks.OreFafnium;
@@ -13,6 +14,7 @@ import com.bluetears.nucraft.blocks.OreSilver;
 import com.bluetears.nucraft.blocks.OreSulfur;
 import com.bluetears.nucraft.blocks.OreTin;
 import com.bluetears.nucraft.blocks.OreUnobtainium;
+import com.bluetears.nucraft.items.DroppableOresItemBlock;
 import com.bluetears.nucraft.items.Graphite;
 import com.bluetears.nucraft.items.Quartz;
 import com.bluetears.nucraft.items.Silicate;
@@ -116,6 +118,7 @@ public class NuCraftCore {
         	GameRegistry.registerBlock(oreSulfur, "oreSulfur");
         	GameRegistry.registerBlock(oreTin, "oreTin");
         	GameRegistry.registerBlock(oreUnobtainium, "oreUnobtainium");
+        	GameRegistry.registerBlock(droppableOresMultiBlock, DroppableOresItemBlock.class);
         }
         
         public static void setHarvestLevel(){
@@ -149,6 +152,8 @@ public class NuCraftCore {
         	oreSulfur = new OreSulfur(startBlockId+11, Material.iron);
         	oreTin = new OreTin(startBlockId+12, Material.iron);
         	oreUnobtainium = new OreUnobtainium(startBlockId+13, Material.iron);
+        	
+        	droppableOresMultiBlock = new DroppableOresMultiBlock(startBlockId);
         }
         
         public static void createItems(){
@@ -205,11 +210,15 @@ public class NuCraftCore {
         public static Block oreSulfur;
         public static Block oreTin;
         public static Block oreUnobtainium;
+        public static Block droppableOresMultiBlock;
         
         //Extra Variables that "Drive" the mod
         public static int startItemId = 20000;
         public static int startBlockId = 500;
         public static boolean copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag;
+        
+        //The following is the string for the multi-block that represents the blocks that drop themselves
+        public static String[] droppableOresNames = {"Bauxite Ore","Copper Ore","Fafnium Ore","Guiltalium Ore","Lead Ore","Onyxstone Ore","Silver Ore","Tin Ore","Unobtainium Ore"};
    
         
 }
