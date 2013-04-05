@@ -154,7 +154,7 @@ public class NuCraftCore {
         	oreTin = new OreTin(startBlockId+12, Material.iron);
         	oreUnobtainium = new OreUnobtainium(startBlockId+13, Material.iron);
         	
-        	droppableOresMultiBlock = new DroppableOresMultiBlock(startBlockId);
+        	//droppableOresMultiBlock = new DroppableOresMultiBlock(startBlockId);
         }
         
         public static void createItems(){
@@ -190,10 +190,10 @@ public class NuCraftCore {
         	LanguageRegistry.addName(graphite, "Graphite");
         	LanguageRegistry.addName(sulfur, "Sulfur");
         	
-        	for (int ix = 0; ix < 9; ix++) {
-    			ItemStack multiBlockStack = new ItemStack(droppableOresMultiBlock, 1, ix);
-    			LanguageRegistry.addName(multiBlockStack, droppableOresNames[multiBlockStack.getItemDamage()]);
-    		}
+        	//for (int ix = 0; ix < 9; ix++) {
+    		//	ItemStack multiBlockStack = new ItemStack(droppableOresMultiBlock, 1, ix);
+    		//	LanguageRegistry.addName(multiBlockStack, droppableOresNames[multiBlockStack.getItemDamage()]);
+    		//}
         }
    
         //The following is the creation for the item reservations
