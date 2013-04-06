@@ -19,7 +19,7 @@ public Quartz(int id)
 @Override
 public void updateIcons(IconRegister iconRegister)
 {
-         iconIndex = iconRegister.registerIcon("nucraft:quartz");
+         iconIndex = iconRegister.registerIcon("nucraft:itemQuartz");
 }
 
 }

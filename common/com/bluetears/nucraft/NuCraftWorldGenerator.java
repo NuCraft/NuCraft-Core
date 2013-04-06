@@ -169,6 +169,14 @@ public class NuCraftWorldGenerator implements IWorldGenerator{
         	(new NuCraftNetherGenerator(NuCraftCore.oreFafnium.blockID, 4)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
         }
 		
+		for(int k = 0; k < 4; k++){
+        	int firstBlockXCoord = chunkX + random.nextInt(16);
+        	int firstBlockYCoord = random.nextInt(36);
+        	int firstBlockZCoord = chunkZ + random.nextInt(16);
+        	
+        	(new AlternateNetherGen(NuCraftCore.oreOnyxstone.blockID, 20)).generate(world, random, firstBlockXCoord, firstBlockYCoord, firstBlockZCoord);
+        }
+		
 		for(int k = 0; k < 20; k++){
         	int firstBlockXCoord = chunkX + random.nextInt(16);
         	int firstBlockYCoord = random.nextInt(36);
