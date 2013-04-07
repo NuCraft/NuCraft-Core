@@ -1,5 +1,8 @@
 package com.bluetears.nucraft;
 
+import Machines.TestMachine;
+import Machines.TestWire;
+
 import com.bluetears.nucraft.blocks.DroppableOresMultiBlock;
 import com.bluetears.nucraft.blocks.OreBauxite;
 import com.bluetears.nucraft.blocks.OreCopper;
@@ -120,6 +123,9 @@ public class NuCraftCore {
         	GameRegistry.registerBlock(oreTin, "oreTin");
         	GameRegistry.registerBlock(oreUnobtainium, "oreUnobtainium");
         //	GameRegistry.registerBlock(droppableOresMultiBlock, DroppableOresItemBlock.class);
+        	
+        	GameRegistry.registerBlock(testMachine, "testMachine");
+        	GameRegistry.registerBlock(testWire, "testWire");
         }
         
         public static void setHarvestLevel(){
@@ -153,6 +159,10 @@ public class NuCraftCore {
         	oreSulfur = new OreSulfur(startBlockId+11, Material.iron);
         	oreTin = new OreTin(startBlockId+12, Material.iron);
         	oreUnobtainium = new OreUnobtainium(startBlockId+13, Material.iron);
+        	
+        	
+        	testMachine = new TestMachine(startBlockId+14, Material.iron);
+        	testWire = new TestWire(startBlockId+15, Material.iron);
         	
         	//droppableOresMultiBlock = new DroppableOresMultiBlock(startBlockId);
         }
@@ -217,6 +227,10 @@ public class NuCraftCore {
         public static Block oreTin;
         public static Block oreUnobtainium;
         public static Block droppableOresMultiBlock;
+        
+        
+        public static Block testMachine;
+        public static Block testWire;
         
         //Extra Variables that "Drive" the mod
         public static int startItemId = 20000;
