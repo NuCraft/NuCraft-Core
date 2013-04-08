@@ -214,7 +214,7 @@ public class NuCraftCore {
         public static void oreDictionary(){
         	
         	OreDictionary.registerOre("copperIngot", new ItemStack(ingotCopper));
-        	OreDictionary.registerOre("copperIngot", new ItemStack(ingotCopper));
+        	OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
         	
         }
    
