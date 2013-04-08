@@ -99,6 +99,7 @@ public class NuCraftCore {
         	registerBlocks();
         	setHarvestLevel();
         	addNames();
+        	oreDictionary();
             
             GameRegistry.registerWorldGenerator(new NuCraftWorldGenerator(copperFlag,tinFlag,leadFlag,bauxiteFlag,quartzFlag,silverFlag,sulfurFlag));
             
@@ -212,7 +213,7 @@ public class NuCraftCore {
         
         public static void oreDictionary(){
         	
-        	OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
+        	OreDictionary.registerOre("copperIngot", new ItemStack(ingotCopper));
         	
         }
    
