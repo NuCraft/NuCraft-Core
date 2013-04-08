@@ -53,7 +53,13 @@ public class NuCraftCore {
         @Instance("NuCraftCore")
         public static NuCraftCore instance;
         
-        //Below is the code for generating all of the blocks
+        //Below is the code for creating of the creative tabs
+        public static CreativeTabs nuCraftCoreTab = new CreativeTabs("nuCraftCoreTab") {
+            public ItemStack getIconItemStack() {
+                    return new ItemStack(oreGuiltalium);
+            }
+        };
+        
         
         
         
@@ -91,7 +97,10 @@ public class NuCraftCore {
         
         @Init
         
+        
         public void load(FMLInitializationEvent event) {
+        	
+        	
         	
         	createBlocks();
         	createItems();
@@ -204,6 +213,9 @@ public class NuCraftCore {
         	LanguageRegistry.addName(sulfur, "Sulfur");
         	LanguageRegistry.addName(ingotCopper,"Copper Ingot");
         	
+        	//Registering of the name for the custom creative tab
+        	LanguageRegistry.instance().addStringLocalization("itemGroup.nuCraftCoreTab", "en_US", "NuCraft Core");
+        	
         	//for (int ix = 0; ix < 9; ix++) {
     		//	ItemStack multiBlockStack = new ItemStack(droppableOresMultiBlock, 1, ix);
     		//	LanguageRegistry.addName(multiBlockStack, droppableOresNames[multiBlockStack.getItemDamage()]);
@@ -217,11 +229,7 @@ public class NuCraftCore {
         	
         }
         
-        public static CreativeTabs nuCraftCoreTab = new CreativeTabs("nuCraftCoreTab") {
-            public ItemStack getIconItemStack() {
-                    return new ItemStack(oreGuiltalium);
-            }
-        };
+        
    
         //The following is the creation for the item reservations
         public static Item silicate;
