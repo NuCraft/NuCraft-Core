@@ -3,7 +3,6 @@ package com.bluetears.nucraft;
 import Machines.TestMachine;
 import Machines.TestWire;
 
-import com.bluetears.nucraft.blocks.DroppableOresMultiBlock;
 import com.bluetears.nucraft.blocks.OreBauxite;
 import com.bluetears.nucraft.blocks.OreCopper;
 import com.bluetears.nucraft.blocks.OreFafnium;
@@ -17,7 +16,6 @@ import com.bluetears.nucraft.blocks.OreSilver;
 import com.bluetears.nucraft.blocks.OreSulfur;
 import com.bluetears.nucraft.blocks.OreTin;
 import com.bluetears.nucraft.blocks.OreUnobtainium;
-import com.bluetears.nucraft.items.DroppableOresItemBlock;
 import com.bluetears.nucraft.items.Graphite;
 import com.bluetears.nucraft.items.Quartz;
 import com.bluetears.nucraft.items.Silicate;
@@ -26,6 +24,7 @@ import com.bluetears.nucraft.items.ingots.IngotCopper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
@@ -217,6 +216,12 @@ public class NuCraftCore {
         	OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
         	
         }
+        
+        public static CreativeTabs nuCraftCoreTab = new CreativeTabs("nuCraftCoreTab") {
+            public ItemStack getIconItemStack() {
+                    return new ItemStack(oreGuiltalium);
+            }
+        };
    
         //The following is the creation for the item reservations
         public static Item silicate;
