@@ -13,13 +13,13 @@ public IngotCopper(int id)
          super(id);
          setCreativeTab(CreativeTabs.tabMisc);
          setMaxStackSize(64);
-         setUnlocalizedName("graphite");
+         setUnlocalizedName("ingotCopper");
 }
 
 @Override
 public void updateIcons(IconRegister iconRegister)
 {
-         iconIndex = iconRegister.registerIcon("nucraft:graphite");
+         iconIndex = iconRegister.registerIcon("nucraft:ingotCopper");
 }
 
 }

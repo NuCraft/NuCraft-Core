@@ -22,6 +22,7 @@ import com.bluetears.nucraft.items.Graphite;
 import com.bluetears.nucraft.items.Quartz;
 import com.bluetears.nucraft.items.Silicate;
 import com.bluetears.nucraft.items.Sulfur;
+import com.bluetears.nucraft.items.ingots.IngotCopper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -29,6 +30,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 import cpw.mods.fml.common.Mod;
@@ -173,6 +175,7 @@ public class NuCraftCore {
         	quartz = new Quartz(startItemId+1);
         	graphite = new Graphite(startItemId+2);
         	sulfur = new Sulfur(startItemId+3);
+        	ingotCopper = new IngotCopper(startItemId+4);
         	
         }
         
@@ -199,11 +202,18 @@ public class NuCraftCore {
         	LanguageRegistry.addName(quartz, "Quartz");
         	LanguageRegistry.addName(graphite, "Graphite");
         	LanguageRegistry.addName(sulfur, "Sulfur");
+        	LanguageRegistry.addName(ingotCopper,"Copper Ingot");
         	
         	//for (int ix = 0; ix < 9; ix++) {
     		//	ItemStack multiBlockStack = new ItemStack(droppableOresMultiBlock, 1, ix);
     		//	LanguageRegistry.addName(multiBlockStack, droppableOresNames[multiBlockStack.getItemDamage()]);
     		//}
+        }
+        
+        public static void oreDictionary(){
+        	
+        	OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
+        	
         }
    
         //The following is the creation for the item reservations
@@ -211,6 +221,7 @@ public class NuCraftCore {
         public static Item quartz;
         public static Item graphite;
         public static Item sulfur;
+        public static Item ingotCopper;
         
         //The following is for the creation for the block reservations
         public static Block oreBauxite;
